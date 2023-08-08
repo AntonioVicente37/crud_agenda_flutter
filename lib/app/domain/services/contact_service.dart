@@ -5,10 +5,11 @@ import '../../database/sqlite/interfaces/contact_dao.dart';
 import '../entities/contact.dart';
 
 class ContactService{
-  var _dao = GetIt.I.get<ContactDAO>();
+  final _dao = GetIt.I.get<ContactDAO>();
   save(Contact contact){
     validateName(contact.nome!);
     validateEmail(contact.email!);
+    validatePhone(contact.telefone!);
     _dao.save(contact);
   }
 
@@ -44,9 +45,9 @@ class ContactService{
   //Validar Telefone
   validatePhone(String phone){
     //var format = RegExp();
-   /*  if(phone == null){
+    if(phone == null){
       throw DomainLayerException('O telefone é obrigatorio');
-    }else if(!format.hashCode(phone)){
+    }/* else if(!format.hashCode(phone)){
       throw DomainLayerException('Formato invalido. O formato deve ser');
     } */
   }

@@ -33,7 +33,7 @@ class ContactDAOImpl implements ContactDAO{
   @override
   save(Contact contact) async{
     _db = await Connection.get();
-    var sql;
+    var sql = '';
     if(contact.id == null){
       sql = 'INSERT INTO contact (nome, telefone, email, url_avatar) VALUES (?,?,?,?)';
       _db!.rawInsert(sql,[contact.nome,contact.telefone, contact.email, contact.urlAvatar]);
