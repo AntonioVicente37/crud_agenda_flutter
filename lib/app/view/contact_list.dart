@@ -7,6 +7,7 @@ import 'package:mobx/mobx.dart';
 
 part 'contact_list.g.dart';
 
+// ignore: library_private_types_in_public_api
 class ContactL = _ContactL with _$ContactL;
 
 abstract class _ContactL with Store{
@@ -22,11 +23,15 @@ abstract class _ContactL with Store{
   }
 
   _ContactL(){
-    refreshList();
+    refreshList();   
   }
   //metodo para chamar o form salvar/alterar
   goToForm(BuildContext context, [Contact? contact]){
     Navigator.of(context).pushNamed(MyApp.CONTACT_FORM, arguments: contact).then(refreshList);
+  }
+
+  gotToDetails(BuildContext context){
+    Navigator.of(context).pushNamed(MyApp.CONTACT_DETAILS);
   }
 
   //excluir

@@ -8,6 +8,7 @@ class Connection{
   static Future<Database> get() async{
     if(_db == null){
       var path =join(await getDatabasesPath(),'banco_contatos');
+      //deleteDatabase(path);
       _db = await openDatabase(
         path,
         version: 1,
@@ -16,6 +17,7 @@ class Connection{
           db.execute(insert1);
           db.execute(insert2);
           db.execute(insert3);
+          db.execute(insert4);
         }
         );
     }
