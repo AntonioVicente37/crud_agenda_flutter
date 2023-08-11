@@ -30,8 +30,8 @@ abstract class _ContactL with Store{
     Navigator.of(context).pushNamed(MyApp.CONTACT_FORM, arguments: contact).then(refreshList);
   }
 
-  gotToDetails(BuildContext context){
-    Navigator.of(context).pushNamed(MyApp.CONTACT_DETAILS);
+  gotToDetails(BuildContext context, Contact contact){
+    Navigator.of(context).pushNamed(MyApp.CONTACT_DETAILS, arguments: contact);
   }
 
   //excluir

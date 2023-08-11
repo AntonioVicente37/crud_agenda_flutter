@@ -7,7 +7,7 @@ import '../entities/contact.dart';
 class ContactService{
   final _dao = GetIt.I.get<ContactDAO>();
   save(Contact contact){
-    validateName(contact.nome!);
+    validateName(contact.nome!); 
     validateEmail(contact.email!);
     validatePhone(contact.telefone!);
     _dao.save(contact);
@@ -22,7 +22,7 @@ class ContactService{
   }
 
   //Validar Nome
-  validateName(String name){
+  validateName(String name){ 
     var min = 3;
     var max = 50;
 

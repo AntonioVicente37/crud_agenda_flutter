@@ -73,19 +73,19 @@ class ContactList extends StatelessWidget {
                     itemCount: lista.length,
                     itemBuilder: (context, i) {
                       var contato = lista[i];
-                      return ListTile(
+                      return ListTile( 
                         leading: circleAvatar(contato.urlAvatar!),
                         title: Text(contato.nome!),
                         onTap: () {
                           //Navigator.of(context).pushNamed(MyApp.CONTACT_DETAILS);
-                          _back.gotToDetails(context);
+                          _back.gotToDetails(context, contato);
                         },
                         subtitle: Text(contato.telefone!),
                         trailing: Container(
                           width: 100,
-                          child: Row(
+                          child: Row(  
                             children: [
-                              iconEditButton(() {
+                              iconEditButton(() { 
                                 _back.goToForm(context, contato);
                               }),
                               iconRemoveButton(context, () {
